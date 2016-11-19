@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'HomeController@index');
+
+Route::get('message/{id}/edit',['uses'=>'HomeController@edit','as'=>'message.edit'])->where(['id'=>'[0-9]+']);
